@@ -16,8 +16,8 @@ class ProtestInfo extends Component {
                         <div className="info-image-container">
                             <img src={hkprotest} alt="Protest" />
                         </div>
-                        <div className="info-map">
-                            {/* <Map /> */}
+                        <div className="info__map">
+                            <Map />
                         </div>
                     </div>
 
@@ -40,20 +40,20 @@ class ProtestInfo extends Component {
                         
                         <div className="info__right-bottom">
                             <div className="info__description">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                        Pellentesque id nibh tortor id aliquet lectus. Felis imperdiet proin fermentum leo vel orci porta. In eu mi bibendum neque 
-                        egestas congue quisque. Morbi tempus iaculis urna id volutpat lacus. Eu nisl nunc mi ipsum faucibus vitae aliquet nec. Curabitur 
-                        vitae nunc sed velit dignissim sodales ut. Nec nam aliquam sem et tortor consequat id. 
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                Pellentesque id nibh tortor id aliquet lectus. Felis imperdiet proin fermentum leo vel orci porta. In eu mi bibendum neque 
+                                egestas congue quisque. Morbi tempus iaculis urna id volutpat lacus. Eu nisl nunc mi ipsum faucibus vitae aliquet nec. Curabitur 
+                                vitae nunc sed velit dignissim sodales ut. Nec nam aliquam sem et tortor consequat id. 
 
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                        Pellentesque id nibh tortor id aliquet lectus. Felis imperdiet proin fermentum leo vel orci porta. In eu mi bibendum neque 
-                        egestas congue quisque. Morbi tempus iaculis urna id volutpat lacus. Eu nisl nunc mi ipsum faucibus vitae aliquet nec. Curabitur 
-                        vitae nunc sed velit dignissim sodales ut. Nec nam aliquam sem et tortor consequat id. 
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                Pellentesque id nibh tortor id aliquet lectus. Felis imperdiet proin fermentum leo vel orci porta. In eu mi bibendum neque 
+                                egestas congue quisque. Morbi tempus iaculis urna id volutpat lacus. Eu nisl nunc mi ipsum faucibus vitae aliquet nec. Curabitur 
+                                vitae nunc sed velit dignissim sodales ut. Nec nam aliquam sem et tortor consequat id. 
 
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                        Pellentesque id nibh tortor id aliquet lectus. Felis imperdiet proin fermentum leo vel orci porta. In eu mi bibendum neque 
-                        egestas congue quisque. Morbi tempus iaculis urna id volutpat lacus. Eu nisl nunc mi ipsum faucibus vitae aliquet nec. Curabitur 
-                        vitae nunc sed velit dignissim sodales ut. Nec nam aliquam sem et tortor consequat id. 
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                Pellentesque id nibh tortor id aliquet lectus. Felis imperdiet proin fermentum leo vel orci porta. In eu mi bibendum neque 
+                                egestas congue quisque. Morbi tempus iaculis urna id volutpat lacus. Eu nisl nunc mi ipsum faucibus vitae aliquet nec. Curabitur 
+                                vitae nunc sed velit dignissim sodales ut. Nec nam aliquam sem et tortor consequat id. 
                             </div>
 
                             <div className="info__panel">

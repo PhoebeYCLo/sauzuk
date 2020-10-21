@@ -1,0 +1,107 @@
+.info{
+    &__content{
+        display: flex;
+        flex-direction: column-reverse;
+        margin: 1.5rem 0;
+
+        @include breakpoint ('table'){
+            flex-direction: initial;
+        }
+    }
+
+    &__left{
+        @include breakpoint ('table'){
+            width: 30%;
+        }
+    }
+
+    &__right{
+        @include breakpoint ('table'){
+            margin-left: 3rem;
+            width: 70%;
+        }
+    }
+
+    &-image-container{
+        display: none;
+
+        @include breakpoint ('table'){
+            display: initial;
+        }
+    }
+
+    &__map{
+        @include breakpoint ('table'){
+            margin-top: 1rem;
+        }
+    }
+
+    &__title{
+        @include type ('h1', 'phone', 700);
+
+        @include breakpoint ('table'){
+            @include type ('h1', 'table');
+        }
+    }
+
+    &__details{
+        display: flex;
+        align-items: center;
+        margin: 0.5rem 0;
+        color: $primary-color;
+        @include type ('h3', 'phone');
+
+        @include breakpoint ('table'){
+            @include type ('h3', 'table');
+        }
+
+        & > svg {
+            margin-right: 0.5rem;
+        }
+    }
+
+    &__description{
+        margin: 1rem 0;
+    }
+
+    &__panel{
+        display: flex;
+        margin-bottom: 0.5rem;
+        width: 100%;
+
+        // @include breakpoint ('table'){
+        //     width: 50%;
+        //     justify-content: flex-end;
+        // }
+    }
+
+    &__button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $primary-color;
+        border-radius: 4px;
+        padding: 0.5rem 1rem;
+        color: $white;
+        margin: 0.5rem;
+        width: 50%;
+        height: 40px;
+
+        &:hover{
+            background-color: $dark-orange;
+        }
+
+        &--live{
+            background-color: $secondary-color;
+            color: $primary-color;
+
+            &:hover{
+                background-color: $dark-grey;
+            }
+        }
+
+        & > svg{
+            margin-right: 0.5rem;
+        }
+    }
+}
