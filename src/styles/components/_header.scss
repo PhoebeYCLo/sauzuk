@@ -1,0 +1,43 @@
+.header {
+    background-color: $secondary-color;
+
+    &__content{
+        display: flex;
+        flex-direction: row;
+        min-height: 80px;
+    }
+
+    &__left{
+        display: flex;
+        align-items: center;
+
+        @include breakpoint ('table') {
+            flex: 1;
+        }
+    }
+
+    &__logo{
+        color: $primary-color;
+        @include type ('h1', 'phone', 800);
+
+        @include breakpoint ('table') {
+            @include type ('h1', 'table', 800);
+        }
+    }
+
+    &__right {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+    }
+
+    &__nav-item{
+        margin: 0 0.5rem;
+        @include type ('h2', 'phone');
+
+        @include breakpoint ('table') {
+            @include type ('h2', 'table');
+        }
+    }
+}

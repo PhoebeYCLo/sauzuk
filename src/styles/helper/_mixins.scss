@@ -40,7 +40,7 @@
     // h2
     @if $tag == 'h2'{
         @if $breakpoint == 'phone' {
-            font-size: 16px;
+            font-size: 20px;
             line-height: 24px;
         }
         @else if $breakpoint == 'table'{
