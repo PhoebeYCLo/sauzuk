@@ -57,12 +57,12 @@ class ProtestInfo extends Component {
                             </div>
 
                             <div className="info__panel">
-                                <div className="info__button info__button--join">
+                                <button className="info__button info__button--join">
                                     Join
-                                </div>
-                                <div className="info__button info__button--live">
+                                </button>
+                                <button className="info__button info__button--live">
                                     <IconView /> Live Mode
-                                </div>
+                                </button>
                             </div>
                         </div>
                     </div>
