@@ -1,0 +1,34 @@
+import React, { Component } from 'react';
+import GoogleMapReact from 'google-map-react';
+
+const AnyReactComponent = ({ text }) => <div>{text}</div>;
+
+class LiveMap extends Component {
+    static defaultProps = {
+        center: {
+          lat: 59.95,
+          lng: 30.33
+        },
+        zoom: 11
+    };
+
+    render() {
+        return (
+            <div className="map">
+                <GoogleMapReact
+                bootstrapURLKeys={{ key: 'AIzaSyCKdFxYbZPigze--jzTghtolfcvKlYQDTI' }}
+                defaultCenter={this.props.center}
+                defaultZoom={this.props.zoom}
+                >
+                <AnyReactComponent
+                    lat={59.955413}
+                    lng={30.337844}
+                    text="My Marker"
+                />
+                </GoogleMapReact>
+            </div>
+        )
+    }
+}
+
+export default LiveMap;
