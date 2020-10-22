@@ -10,6 +10,10 @@ class CreateProtest extends Component {
                         <div className="createprotest__body">
                             <div className="createprotest__left">
                                 <div className="createprotest__item">
+                                    <label className="createprotest__label">Image</label>
+                                    <input type="file" name="pimage" className="createprotest__input input" accept="image/*" />
+                                </div>
+                                <div className="createprotest__item">
                                     <label className="createprotest__label">Protest Name</label>
                                     <input type="text" name="pname" className="createprotest__input input" placeholder="Protest Name" />
                                 </div>
@@ -25,16 +29,16 @@ class CreateProtest extends Component {
 
                             <div className="createprotest__right">
                                 <div className="createprotest__item">
-                                    <label className="createprotest__label">Location</label>
-                                    <input type="text" name="plocation" className="createprotest__input input" placeholder="Location" />
-                                </div>
-                                <div className="createprotest__item">
                                     <label className="createprotest__label">Time</label>
                                     <input type="time" name="ptime" className="createprotest__input input" />
                                 </div>
                                 <div className="createprotest__item">
-                                    <label className="createprotest__label">Password <span className="createprotest__note">(access to edit protest detail)</span></label>
-                                    <input type="password" name="ppassword" className="createprotest__input input" placeholder="Password" />
+                                    <label className="createprotest__label">Location - latitude</label>
+                                    <input type="text" name="plat" className="createprotest__input input" placeholder="Location - latitude" />
+                                </div>
+                                <div className="createprotest__item">
+                                    <label className="createprotest__label">Location - longitude</label>
+                                    <input type="text" name="plng" className="createprotest__input input" placeholder="Location - longitude " />
                                 </div>
                             </div>
                         </div>
