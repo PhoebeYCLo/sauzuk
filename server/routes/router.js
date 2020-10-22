@@ -9,12 +9,6 @@ router.get("/", (req, res) =>
             res.send({ protests });
         })
 );
-    // .get((req, res) => {
-    //     Protest
-    //         .fetchAll()
-    //         .then(protests =>{
-    //             res.status(200).json({ protests });
-    //         });
 
 
 module.exports = router;
