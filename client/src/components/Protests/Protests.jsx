@@ -38,6 +38,7 @@ class Protests extends Component {
                                 name={data.name}
                                 date={data.date}
                                 description={data.description}
+                                id={data.id}
                             />
                         )}
                     </div>

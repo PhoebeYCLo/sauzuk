@@ -12,9 +12,9 @@ function App(props) {
       <Pagelayout>
         <Switch>
           <Route path="/" exact component={Peotests} />
-          {/* <Route path="/protest/:id" render={(routeProps) => {
+          <Route path="/protest/:id" render={(routeProps) => {
             return <ProtestInfo {...routeProps} />
-          }} /> */}
+          }} />
           <Route path="/create" component={CreateProtest} />
         </Switch>
       </Pagelayout>

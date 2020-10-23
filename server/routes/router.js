@@ -10,5 +10,13 @@ router.get("/", (req, res) =>
         })
 );
 
+router.get("/:id", (req, res) => {
+    Protest.where(req.params)
+        .fetchAll()
+        .then(protests => {
+            res.send({ protests });
+        })
+});
+
 
 module.exports = router;
