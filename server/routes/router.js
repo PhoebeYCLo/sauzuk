@@ -6,7 +6,8 @@ router.get("/", (req, res) =>
     Protest
         .fetchAll()
         .then(protests => {
-            res.send({ protests });
+            // res.send({ protests });
+            res.json({ protests });
         })
 );
 
@@ -14,7 +15,8 @@ router.get("/:id", (req, res) => {
     Protest.where(req.params)
         .fetchAll()
         .then(protests => {
-            res.send({ protests });
+            // res.send({ protests });
+            res.json({ protests });
         })
 });
 
