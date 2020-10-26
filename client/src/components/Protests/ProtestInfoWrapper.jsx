@@ -47,11 +47,11 @@ import IconView from '../Icons/IconView';
                             Join
                         </button>
 
-                        <Link to={`/livemode/${props.id}`}>
-                            <button className="info__button info__button--live">
-                                <IconView /> Live Mode
-                            </button>
-                        </Link>
+                        <button className="info__button info__button--live">
+                            <Link to={`/livemode/${props.id}`}>
+                                <IconView /> <span className="info__button-text">Live Mode</span>
+                            </Link> 
+                        </button>
                     </div>
                 </div>
             </div>

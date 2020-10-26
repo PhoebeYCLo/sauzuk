@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import LiveMap from './LiveMap';
 
 class LiveMode extends Component {
+    // state = { isShown: false };
+
     render() {
         return (
             <div className="livemode">
@@ -19,13 +21,7 @@ class LiveMode extends Component {
                                     <div className="livemode__card-message">Tear gas used in Hennessy Road</div>
                                 </div>
                             </div>
-                            <div className="livemode__card">
-                                <div className="livemode__card--left"></div>
-                                <div className="livemode__card--right">
-                                    <div className="livemode__card-time">5:30pm</div>
-                                    <div className="livemode__card-message">Tear gas used in Hennessy Road</div>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
