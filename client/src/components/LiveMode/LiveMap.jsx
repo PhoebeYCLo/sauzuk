@@ -194,15 +194,9 @@ class LiveMap extends Component {
         }
     }
 
-    // componentDidMount(){
-    //     navigator.geolocation.getCurrentPosition(position=>
-    //       this.setState({
-    //         lat:position.coords.latitude,
-    //         lng:position.coords.longitude,
-    //     }));
-    // }
-
-    _onClick = ({x, y, lat, lng, event}) => console.log(x, y, lat, lng, event)
+    _onClick = ({x, y, lat, lng, event}) => 
+    // console.log(x, y, lat, lng, event)
+    this.setState({lat: lat, lng: lng})
 
       render() {
         return (

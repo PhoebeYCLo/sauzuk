@@ -1,8 +1,17 @@
 import React, { Component } from 'react';
 import LiveMap from './LiveMap';
+import Modal from '../Modal/Modal';
 
 class LiveMode extends Component {
-    // state = { isShown: false };
+    state = { show: false };
+
+    showModal = () => {
+        this.setState({ show: true });
+    };
+
+    hideModal = () => {
+        this.setState({ show: false });
+    };
 
     render() {
         return (
@@ -21,7 +30,13 @@ class LiveMode extends Component {
                                     <div className="livemode__card-message">Tear gas used in Hennessy Road</div>
                                 </div>
                             </div>
-                            
+                            <Modal show={this.state.show} handleClose={this.hideModal}>
+                                <p>Modal</p>
+                                <p>Data</p>
+                            </Modal>
+                            <button type="button" onClick={this.showModal}>
+                            open
+                            </button>
                         </div>
                     </div>
                 </div>
