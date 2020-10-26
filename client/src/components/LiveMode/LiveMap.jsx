@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
-
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
+import Marker from '../Map/Marker';
 
 class LiveMap extends Component {
     static defaultProps = {
@@ -10,25 +9,21 @@ class LiveMap extends Component {
           lng: 30.33
         },
         zoom: 11
-    };
-
-    render() {
+      };
+     
+      render() {
         return (
-            <div className="map">
-                <GoogleMapReact
-                bootstrapURLKeys={{ key: 'AIzaSyCKdFxYbZPigze--jzTghtolfcvKlYQDTI' }}
-                defaultCenter={this.props.center}
-                defaultZoom={this.props.zoom}
-                >
-                <AnyReactComponent
-                    lat={59.955413}
-                    lng={30.337844}
-                    text="My Marker"
-                />
-                </GoogleMapReact>
-            </div>
-        )
-    }
+          // Important! Always set the container height explicitly
+          <div style={{ height: '100vh', width: '100%' }}>
+            <GoogleMapReact
+              bootstrapURLKeys={{ key: 'AIzaSyCKdFxYbZPigze--jzTghtolfcvKlYQDTI' }}
+              defaultCenter={this.props.center}
+              defaultZoom={this.props.zoom}
+            >
+            </GoogleMapReact>
+          </div>
+        );
+      }
 }
 
 export default LiveMap;

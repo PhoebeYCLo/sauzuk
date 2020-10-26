@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import Map from '../Map/Map';
 import hkprotest from '../../assets/images/hkprotest.jpeg';
 import IconDate from '../Icons/IconDate';
@@ -45,9 +46,12 @@ import IconView from '../Icons/IconView';
                         <button className="info__button info__button--join">
                             Join
                         </button>
-                        <button className="info__button info__button--live">
-                            <IconView /> Live Mode
-                        </button>
+
+                        <Link to={`/livemode/${props.id}`}>
+                            <button className="info__button info__button--live">
+                                <IconView /> Live Mode
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </div>
