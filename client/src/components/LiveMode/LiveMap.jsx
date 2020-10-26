@@ -186,17 +186,11 @@ const createMapOptions = (maps) => {
 class LiveMap extends Component {
     constructor(props){
         super(props);
-    
-        this.state={
-          lat:null,
-          lng:null,
-          markers:[]
-        }
     }
 
     _onClick = ({x, y, lat, lng, event}) => 
     // console.log(x, y, lat, lng, event)
-    this.setState({lat: lat, lng: lng})
+    this.props.updatelocation(lat, lng);
 
       render() {
         return (
