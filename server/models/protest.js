@@ -1,7 +1,7 @@
 const bookshelf = require("../bookshelf");
 
 const Protest = bookshelf.model("Protest", {
-    tableName: "protest"
+    tableName: "protest",
 });
 
 module.exports = Protest;

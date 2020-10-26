@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Protest = require("../models/protest");
+const Map = require("../models/map");
 
 router.get("/", (req, res) => 
     Protest
