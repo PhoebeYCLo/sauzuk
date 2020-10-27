@@ -5,4 +5,4 @@ const Map = bookshelf.model("Map", {
     protest: () => this.belongsTo("Protest")
 });
 
-module.exports = Protest;
+module.exports = Map;

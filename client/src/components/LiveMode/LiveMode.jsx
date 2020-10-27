@@ -41,15 +41,27 @@ class LiveMode extends Component {
                                 </div>
                             </div>
                             <Modal show={this.state.show} handleClose={this.hideModal}>
-                                <div className="modal__header">Safety Report</div>
-                                <div className="modal__subheader">Choose Area Safety Status</div>
-                                <div className="modal__status">
-                                    <button className="modal__status-btn modal__status--danger">Danger</button>
-                                    <button className="modal__status-btn modal__status--risk">Risk</button>
-                                    <button className="modal__status-btn modal__status--safe">Safe</button>
-                                </div>
-                                <div className="modal__subheader">Message</div>
-                                    <textarea className="modal__textarea texteare" placeholder="Status message"></textarea>
+                                <form className="modal__form" action="post">
+                                    <div className="modal__header">Safety Report</div>
+                                    <div className="modal__subheader">Choose Area Safety Status</div>
+                                    <div className="modal__status">
+                                        <div className="modal__status-item">
+                                            <input type="button" className="modal__status-btn modal__status--danger" value="danger" name="statusDanger" />
+                                            <div className="modal__status-type">Danger</div>
+                                        </div>
+                                        <div className="modal__status-item">
+                                            <input type="button" className="modal__status-btn modal__status--risk" value="risk" name="statusRisk" />
+                                            <div className="modal__status-type">Risk</div>
+                                        </div>
+                                        <div className="modal__status-item">
+                                            <input type="button" className="modal__status-btn modal__status--safe" value="safe" name="statusSafe" />
+                                            <div className="modal__status-type">Safe</div>
+                                        </div>
+                                    </div>
+                                    <div className="modal__subheader">Message</div>
+                                    <textarea className="modal__textarea textarea" placeholder="Status message"></textarea>
+                                    <button type="submit" onClick={this.hideModal} className="modal__button">Publish</button>
+                                </form>
                             </Modal>
                             {/* <button type="button" onClick={this.showModal} className="modal__button">
                                 Report
