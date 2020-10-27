@@ -55,28 +55,29 @@
     &__status{
         display: flex;
         justify-content: space-evenly;
+    }
 
-        &-btn{
-            background-color: $primary-color;
-            border: none;
-            border-radius: 50%;
-            color: white;
-            padding: 3.8em;
-            text-align: center;
-        }
-
+    &__circle{
+        background-color: $primary-color;
+        border: none;
+        border-radius: 50%;
+        color: white;
+        padding: 3.8em;
+        text-align: center;
+        
         &--danger{
             background-color: $red;
         }
-
+    
         &--risk{
             background-color: $yellow;
         }
-
+    
         &--safe{
             background-color: $green;
         }
     }
+
 }
   
   

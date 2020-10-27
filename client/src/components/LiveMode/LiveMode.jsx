@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
 import LiveMap from './LiveMap';
 import Modal from '../Modal/Modal';
+import LiveCard from './LiveCard';
+import axios from 'axios';
+
+const URL = "http://localhost:8080";
 
 class LiveMode extends Component {
     state={
         lat:null,
         lng:null,
         show: false,
-        markers: []
+        statuses: [],
+        livemap: []
     }
 
     showModal = () => {
@@ -23,6 +28,45 @@ class LiveMode extends Component {
         this.setState({lat: lat, lng: lng})
     }
 
+    getLiveMap(){
+        axios.get(`${URL}`)
+            .then(res => 
+                this.setState({ livemap: res.data }))
+            .catch(err => console.log(err));
+    }
+
+    getStatus(){
+        axios.get(`${URL}/status`)
+            .then(res => 
+                this.setState({ statuses: res.data }))
+            .catch(err => console.log(err));
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+
+        const status = e.target.statusbtn.value;
+        const message = e.target.statusmessage.value;
+        console.log(status + ' ' + message);
+       
+        axios.post(`${URL}/status`, {
+            statusLat: this.state.lat,
+            statusLng: this.state.lng,
+            status: status,
+            statusTime: Date.now(),
+            statusMessage: message
+        }).then(res => {
+            console.log(res.data);
+        });
+
+        e.target.reset();
+    }
+
+    componentDidMount(){
+        this.getLiveMap();
+        this.getStatus();
+    }
+
     render() {
         return (
             <div className="livemode">
@@ -33,33 +77,30 @@ class LiveMode extends Component {
                     <div className="livemode__right">
                         <div className="livemode__header">Safety Status</div>
                         <div className="livemode__timeline">
-                            <div className="livemode__card">
-                                <div className="livemode__card--left"></div>
-                                <div className="livemode__card--right">
-                                    <div className="livemode__card-time">5:30pm</div>
-                                    <div className="livemode__card-message">Tear gas used in Hennessy Road</div>
-                                </div>
-                            </div>
+                            <LiveCard />
                             <Modal show={this.state.show} handleClose={this.hideModal}>
-                                <form className="modal__form" action="post">
+                                <form onSubmit={this.handleSubmit} className="modal__form" action="post">
                                     <div className="modal__header">Safety Report</div>
                                     <div className="modal__subheader">Choose Area Safety Status</div>
                                     <div className="modal__status">
                                         <div className="modal__status-item">
-                                            <input type="button" className="modal__status-btn modal__status--danger" value="danger" name="statusDanger" />
-                                            <div className="modal__status-type">Danger</div>
+                                            <div className="modal__circle modal__circle--danger"></div>
+                                            <input type="radio" name="statusbtn" className="modal__status-radio" value="danger" />
+                                            <label className="modal__status-type">Danger</label>
                                         </div>
                                         <div className="modal__status-item">
-                                            <input type="button" className="modal__status-btn modal__status--risk" value="risk" name="statusRisk" />
-                                            <div className="modal__status-type">Risk</div>
+                                            <div className="modal__circle modal__circle--risk"></div>
+                                            <input type="radio" name="statusbtn" className="modal__status-radio" value="risk" />
+                                            <label className="modal__status-type">Risk</label>
                                         </div>
                                         <div className="modal__status-item">
-                                            <input type="button" className="modal__status-btn modal__status--safe" value="safe" name="statusSafe" />
-                                            <div className="modal__status-type">Safe</div>
+                                            <div className="modal__circle modal__circle--safe"></div>
+                                            <input type="radio" name="statusbtn" className="modal__status-radio" value="safe" />
+                                            <label className="modal__status-type">Safe</label>
                                         </div>
                                     </div>
                                     <div className="modal__subheader">Message</div>
-                                    <textarea className="modal__textarea textarea" placeholder="Status message"></textarea>
+                                    <textarea name="statusmessage" className="modal__textarea textarea" placeholder="Status message"></textarea>
                                     <button type="submit" onClick={this.hideModal} className="modal__button">Publish</button>
                                 </form>
                             </Modal>

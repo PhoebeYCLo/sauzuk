@@ -11,7 +11,7 @@ class Protests extends Component {
     }
 
     getProtest() {
-        axios.get(`${URL}/`)
+        axios.get(`${URL}/protest/`)
             .then(res =>
                 // console.log(res.data.protests))
                 this.setState({ protests: res.data.protests}))

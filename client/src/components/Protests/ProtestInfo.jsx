@@ -11,7 +11,7 @@ class ProtestInfo extends Component {
 
     getInfo = () => {
         const pId = this.props.match.params.id;
-        axios.get(`${URL}/` + pId)
+        axios.get(`${URL}/protest/` + pId)
             .then(res => {
                 // console.log(res.data)
                 this.setState({protestInfo: res.data.protests})
