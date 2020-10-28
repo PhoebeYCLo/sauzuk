@@ -206,7 +206,7 @@ class LiveMap extends Component {
             >
             <Marker lat={this.props.lat} lng={this.props.lng} />
             {this.props.status.map(data => 
-                <Marker lat={data.statusLat} lng={data.statusLng} />
+                <Marker lat={data.statusLat} lng={data.statusLng} safety={data.status} />
             )}
             </GoogleMapReact>
 

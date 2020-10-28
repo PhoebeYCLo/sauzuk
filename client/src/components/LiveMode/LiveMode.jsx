@@ -86,14 +86,11 @@ class LiveMode extends Component {
             <div className="livemode">
                 <div className="livemode__content">
                     <div className="livemode__left">
-                        {/* <LiveMap updatelocation={this.updatelocation} lat={this.state.livemap.mapLat} /> */}
-                        {/* <LiveMap updatelocation={this.updatelocation} location={this.state.livemap} lat={this.state.livemap.mapLat} /> */}
                         <LiveMap updatelocation={this.updatelocation} lat={this.state.livemap.mapLat} lng={this.state.livemap.mapLng} status={this.state.statuses} />
                     </div>
                     <div className="livemode__right">
                         <div className="livemode__header">Safety Status</div>
                         <div className="livemode__timeline">
-                            {/* <LiveCard /> */}
                             {this.state.statuses.map(data => 
                                 <LiveCard 
                                     safety={data.status}
@@ -127,9 +124,6 @@ class LiveMode extends Component {
                                     <button type="submit" onClick={this.hideModal} className="modal__button">Publish</button>
                                 </form>
                             </Modal>
-                            {/* <button type="button" onClick={this.showModal} className="modal__button">
-                                Report
-                            </button> */}
                         </div>
                     </div>
                 </div>
