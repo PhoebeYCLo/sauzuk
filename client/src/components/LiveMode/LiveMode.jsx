@@ -75,6 +75,12 @@ class LiveMode extends Component {
         this.getStatus();
     }
 
+    componentDidUpdate(prevState) {
+        if(prevState.statuses !== this.state.statuses){
+            this.getStatus();
+        }
+    }
+
     render() {
         return (
             <div className="livemode">
