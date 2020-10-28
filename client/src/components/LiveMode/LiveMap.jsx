@@ -183,9 +183,10 @@ const createMapOptions = (maps) => {
     }
 }
 
+
 class LiveMap extends Component {
     constructor(props){
-        super(props);
+        super(props)
     }
 
     _onClick = ({x, y, lat, lng, event}) => 
@@ -197,12 +198,15 @@ class LiveMap extends Component {
           <div style={{ height: '100vh', width: '100%' }}>
             <GoogleMapReact
               bootstrapURLKeys={{ key: 'AIzaSyCKdFxYbZPigze--jzTghtolfcvKlYQDTI' }}
-              center={ {lat: 22.2824, lng: 114.1887 }}
+              center={ {lat: this.props.lat, lng: this.props.lng }}
               zoom={15}
+              hoverDistance={10}
               onClick={this._onClick}
               options={createMapOptions}
             >
             </GoogleMapReact>
+
+            <Marker lat={this.props.lat} lng={this.props.lng} />
           </div>
         );
       }

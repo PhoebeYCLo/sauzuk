@@ -10,8 +10,19 @@ router
     Map
         .fetchAll()
         .then(maps => {
-            console.log(maps);
+            // console.log(maps);
             res.json({ maps });
+        })
+});
+
+router
+    .route("/:mapId")
+    .get((req, res) => {
+    Map.where(req.params)
+        .fetchAll()
+        .then(maps => {
+            // res.send({ protests });
+            res.send({ maps });
         })
 });
 

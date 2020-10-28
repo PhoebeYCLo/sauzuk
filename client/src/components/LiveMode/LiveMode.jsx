@@ -29,16 +29,18 @@ class LiveMode extends Component {
     }
 
     getLiveMap(){
-        axios.get(`${URL}`)
+        const mapId = this.props.match.params.id;
+        axios.get(`${URL}/map/` + mapId)
             .then(res => 
-                this.setState({ livemap: res.data }))
+                // console.log(res.data))
+                this.setState({ livemap: res.data.maps[0] }))
             .catch(err => console.log(err));
     }
 
     getStatus(){
         axios.get(`${URL}/status`)
             .then(res => 
-                this.setState({ statuses: res.data }))
+                this.setState({ statuses: res.data.statuses }))
             .catch(err => console.log(err));
     }
 
@@ -72,7 +74,9 @@ class LiveMode extends Component {
             <div className="livemode">
                 <div className="livemode__content">
                     <div className="livemode__left">
-                        <LiveMap updatelocation={this.updatelocation} />
+                        {/* <LiveMap updatelocation={this.updatelocation} lat={this.state.livemap.mapLat} /> */}
+                        {/* <LiveMap updatelocation={this.updatelocation} location={this.state.livemap} lat={this.state.livemap.mapLat} /> */}
+                        <LiveMap updatelocation={this.updatelocation} lat={this.state.livemap.mapLat} lng={this.state.livemap.mapLng} />
                     </div>
                     <div className="livemode__right">
                         <div className="livemode__header">Safety Status</div>

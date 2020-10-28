@@ -15,7 +15,10 @@ function App(props) {
           <Route path="/protest/:id" render={(routeProps) => {
             return <ProtestInfo {...routeProps} />
           }} />
-          <Route path="/livemode/:id" component={LiveMode} />
+          <Route path="/livemode/:id" render={(routeProps => {
+            return <LiveMode {...routeProps} />
+          })} />
+          {/* component={LiveMode} /> */}
           <Route path="/create" component={CreateProtest} />
         </Switch>
       </Pagelayout>
