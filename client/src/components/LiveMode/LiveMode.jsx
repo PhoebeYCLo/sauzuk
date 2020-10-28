@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import LiveMap from './LiveMap';
 import Modal from '../Modal/Modal';
 import LiveCard from './LiveCard';
+import Map from '../Map/Map';
 import axios from 'axios';
 
 const URL = "http://localhost:8080";

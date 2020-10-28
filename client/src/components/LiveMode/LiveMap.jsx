@@ -204,9 +204,9 @@ class LiveMap extends Component {
               onClick={this._onClick}
               options={createMapOptions}
             >
+            <Marker lat={this.props.lat} lng={this.props.lng} />
             </GoogleMapReact>
 
-            <Marker lat={this.props.lat} lng={this.props.lng} />
           </div>
         );
       }
