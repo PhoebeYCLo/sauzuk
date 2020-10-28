@@ -88,7 +88,7 @@ class LiveMode extends Component {
                     <div className="livemode__left">
                         {/* <LiveMap updatelocation={this.updatelocation} lat={this.state.livemap.mapLat} /> */}
                         {/* <LiveMap updatelocation={this.updatelocation} location={this.state.livemap} lat={this.state.livemap.mapLat} /> */}
-                        <LiveMap updatelocation={this.updatelocation} lat={this.state.livemap.mapLat} lng={this.state.livemap.mapLng} />
+                        <LiveMap updatelocation={this.updatelocation} lat={this.state.livemap.mapLat} lng={this.state.livemap.mapLng} status={this.state.statuses} />
                     </div>
                     <div className="livemode__right">
                         <div className="livemode__header">Safety Status</div>

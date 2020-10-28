@@ -183,11 +183,11 @@ const createMapOptions = (maps) => {
     }
 }
 
-
 class LiveMap extends Component {
     constructor(props){
         super(props)
     }
+    
 
     _onClick = ({x, y, lat, lng, event}) => 
     // console.log(x, y, lat, lng, event)
@@ -205,6 +205,9 @@ class LiveMap extends Component {
               options={createMapOptions}
             >
             <Marker lat={this.props.lat} lng={this.props.lng} />
+            {this.props.status.map(data => 
+                <Marker lat={data.statusLat} lng={data.statusLng} />
+            )}
             </GoogleMapReact>
 
           </div>
