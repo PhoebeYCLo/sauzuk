@@ -41,6 +41,7 @@ class LiveMode extends Component {
     getStatus(){
         axios.get(`${URL}/status`)
             .then(res => 
+                // console.log(res.data.statuses))
                 this.setState({ statuses: res.data.statuses }))
             .catch(err => console.log(err));
     }
@@ -51,12 +52,16 @@ class LiveMode extends Component {
         const status = e.target.statusbtn.value;
         const message = e.target.statusmessage.value;
         console.log(status + ' ' + message);
+
+        const submitTime = new Date();
+        const time = submitTime.getHours() + ":" + submitTime.getMinutes() + ":" + submitTime.getSeconds();
        
-        axios.post(`${URL}/status`, {
+        axios.post(`${URL}/status/`, {
             statusLat: this.state.lat,
             statusLng: this.state.lng,
             status: status,
-            statusTime: Date.now(),
+            // statusTime: Date.now(),
+            statusTime: time,
             statusMessage: message
         }).then(res => {
             console.log(res.data);
@@ -82,7 +87,14 @@ class LiveMode extends Component {
                     <div className="livemode__right">
                         <div className="livemode__header">Safety Status</div>
                         <div className="livemode__timeline">
-                            <LiveCard />
+                            {/* <LiveCard /> */}
+                            {this.state.statuses.map(data => 
+                                <LiveCard 
+                                    safety={data.status}
+                                    time={data.statusTime}
+                                    message={data.statusMessage}
+                                />
+                            )}
                             <Modal show={this.state.show} handleClose={this.hideModal}>
                                 <form onSubmit={this.handleSubmit} className="modal__form" action="post">
                                     <div className="modal__header">Safety Report</div>
